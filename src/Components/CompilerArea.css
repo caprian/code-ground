@@ -1,0 +1,24 @@
+.compiler-area-container {
+    padding: 16px; 
+    border-left: 1px solid #ddd; 
+    overflow-y: auto; 
+    background-color: #403e3e;
+}
+
+.compiler-header {
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.code-header {
+    margin-bottom: 16px;
+}
+
+.code-input {
+    width: 100%;
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    height: 400px;
+    width: 80%;
+}

@@ -1,0 +1,25 @@
+.code-ground {
+    display: flex;
+    height: 600px; 
+    justify-content: space-around;
+}
+
+.problem-area {
+    flex: 1;
+    border-right: 1px solid #ddd; 
+    padding: 16px; 
+    overflow-y: auto; 
+    border: 2px Solid black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.compiler-area {
+    flex: 2; 
+    padding: 16px; 
+    overflow-y: auto; 
+    border: 2px Solid black;
+    border-radius: 10px;
+    margin: 10px;
+    width: 40%;
+}
