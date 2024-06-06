@@ -3,6 +3,7 @@ import ProblemArea from "./ProblemArea";
 import CompilerArea from "./CompilerArea";
 import "./CodeGround.css";
 import { CompilerStoreProvider, useCompilerStore } from "./CompilerStore";
+import OutputArea from "./OutputArea";
 
 export default function CodeGround() {
 	return (

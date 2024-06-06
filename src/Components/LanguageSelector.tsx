@@ -11,7 +11,7 @@ export default function LanguageSelector({
 	onSelect,
 }: LanguageSelectorProps) {
 	const LANGUAGE_VERSIONS = {
-		javaScript: "18.15.0",
+		javascript: "18.15.0",
 		java: "15.0.2",
 	};
 

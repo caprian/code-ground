@@ -1,4 +1,4 @@
-import create, { StoreApi } from "zustand";
+import { createStore, StoreApi } from "zustand";
 import { createContext, useContext } from "react";
 
 interface ICompilerStore {
@@ -11,15 +11,15 @@ interface ICompilerStore {
 	runCode: () => Promise<void>;
 }
 
-const compilerStore = create<ICompilerStore>((set) => ({
+const compilerStore = createStore<ICompilerStore>((set, get) => ({
 	code: "// some comment",
 	output: "",
 	theme: "vs-dark",
-	setCode: (code) => set((state) => ({ ...state, code })),
-	setOutput: (output) => set((state) => ({ ...state, output })),
-	setTheme: (theme) => set((state) => ({ ...state, theme })),
+	setCode: (code) => set({ code }),
+	setOutput: (output) => set({ output }),
+	setTheme: (theme) => set({ theme }),
 	runCode: async () => {
-		const { code } = compilerStore.getState();
+		const { code } = get();
 		const language_id = 62; // Language ID for Java in Judge0
 
 		const response = await fetch(
@@ -38,10 +38,9 @@ const compilerStore = create<ICompilerStore>((set) => ({
 
 		const resultData = await response.json();
 
-		set((state) => ({
-			...state,
+		set({
 			output: resultData.stdout || resultData.stderr || "Error executing code",
-		}));
+		});
 	},
 }));
 
