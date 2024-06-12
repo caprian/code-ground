@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import HeaderButton from "./HeaderButton";
+import RunButton from "./RunButton";
 import TextField from "@mui/material/TextField";
 import { executeCode } from "./api";
-import CircularProgress from "@mui/material/CircularProgress";
+import "./OutputArea.css";
 
 interface OutputAreaProps {
 	editorRef: React.RefObject<any>;
@@ -27,10 +27,17 @@ export default function OutputArea({ editorRef, language }: OutputAreaProps) {
 		}
 	};
 	return (
-		<div style={{ height: "100px" }}>
-			<HeaderButton name="Run" onClick={onRunClick} className="btn-run" />
-			{isLoading ? <CircularProgress size={20} /> : null}
+		<div className="outputarea-container">
+			<div className="btn-run">
+				<RunButton
+					isLoading={isLoading}
+					className="run-btn"
+					name="Run"
+					onClick={onRunClick}
+				/>
+			</div>
 			<TextField
+				className="readonly-output-area"
 				rows="5"
 				size="medium"
 				label="Readonly"

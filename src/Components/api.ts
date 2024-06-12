@@ -1,9 +1,19 @@
 import axios from "axios";
 import { LANGUAGE_VERSIONS } from "./Constants";
 
+
 const API = axios.create({
   baseURL: "https://emkc.org/api/v2/piston",
 });
+
+const CHAPTERSAPI =axios.create({
+    baseURL: "./chapters.json"
+});
+
+export const getChapters = async () => {
+    const response = await CHAPTERSAPI.get('/');
+    return response.data;
+  };
 
 export const executeCode = async (language: any, sourceCode: any) => {
   const response = await API.post("/execute", {

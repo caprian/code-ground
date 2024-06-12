@@ -1,0 +1,26 @@
+.btn-run{
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-self: flex-end;
+}
+.run-btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
+    border-radius: 20px;
+}
+.readonly-output-area{
+    background-color:#1e1e1e;
+    border-radius: 20px;
+    color: #ffffff;
+    -webkit-text-fill-color:#ffffff;
+}
+.outputarea-container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+.readonly-output-area .css-7209ej-MuiInputBase-input-MuiFilledInput-input.Mui-disabled{
+    -webkit-text-fill-color:#ffffff;
+}
+.readonly-output-area .css-10ukbsc-MuiInputBase-root-MuiFilledInput-root.Mui-disabled{
+    background: transparent;
+}

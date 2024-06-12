@@ -1,8 +1,8 @@
 .compiler-area-container {
-    padding: 16px; 
-    border-left: 1px solid #ddd; 
-    overflow-y: auto; 
-    background-color: #403e3e;
+    padding: 16px;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+    border-radius: 20px;
 }
 
 .code-input {

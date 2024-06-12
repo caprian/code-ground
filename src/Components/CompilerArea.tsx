@@ -4,6 +4,7 @@ import Editor from "@monaco-editor/react";
 import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "./Constants";
 import OutputArea from "./OutputArea";
+import FormLabel from "@mui/material/FormLabel";
 
 export default function CompilerArea() {
 	const [language, setLanguage] = useState("java");
@@ -32,7 +33,10 @@ export default function CompilerArea() {
 	return (
 		<div>
 			<div className="compiler-area-container">
-				<LanguageSelector language={language} onSelect={onSelect} />
+				{/* <LanguageSelector language={language} onSelect={onSelect} /> */}
+				<FormLabel style={{ color: "white" }} component="legend">
+					Main.java
+				</FormLabel>
 				<Editor
 					language={language}
 					theme={theme}

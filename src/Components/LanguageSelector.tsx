@@ -1,5 +1,6 @@
 import { InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import React from "react";
+import "./LanguageSelector.css";
 
 interface LanguageSelectorProps {
 	language: string;
@@ -23,10 +24,11 @@ export default function LanguageSelector({
 
 	return (
 		<div>
-			<InputLabel id="demo-simple-select-label">Select Language</InputLabel>
 			<Select
+				disabled={true}
 				labelId="simple-select-label"
 				id="simple-select"
+				className="language-selector"
 				value={language}
 				label="Select Language"
 				onChange={handleChange}>
