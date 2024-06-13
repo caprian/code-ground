@@ -1,0 +1,79 @@
+.banner-area{
+    height:15vh;
+    display: flex;
+    width: 100%;
+    background-color: blueviolet;
+}
+.header-logo{
+    height: 100%;
+}
+
+.header-bar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    margin-left: auto;
+
+}
+
+.navbar-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    align-items: center;
+}
+
+.navbar-list_items{
+    list-style: none;
+    display: flex;
+    padding-right: 55px;
+}
+
+.navbar-list_lastitem{
+    list-style: none;
+    padding-right: 0;
+}
+
+.navitem-link{
+    color: #fff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+}
+
+.start-learning_btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: 0;
+        line-height: 19px;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 164px;
+        height: 56px;
+        background: linear-gradient(241.71deg, #32C5FF -23.05%, #A3BF4A 95.65%);
+        border-radius: 6px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    height:100%;
+}
