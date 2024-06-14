@@ -1,6 +1,5 @@
 .code-ground_container{
     background-color: #ffffff;
-    display: flex;
 }
 .code-ground {
     display: flex;
@@ -22,8 +21,18 @@
     margin: 10px;
 }
 
-.next-btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
-    color: #000000;
+.button-container{
     display: flex;
-    flex: 0 0 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.next-btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
+    display: flex;
+    flex: 1 1;
+}
+
+.prev-btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
+    display: flex;
+    flex: 1 1;
 }

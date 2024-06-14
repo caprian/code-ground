@@ -2,10 +2,11 @@
     height:15vh;
     display: flex;
     width: 100%;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 .header-logo{
-    height: 100%;
+    height: 80%;
+    margin-top: 10px;
 }
 
 .header-bar{
@@ -47,11 +48,12 @@
     color: #fff;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 19px;
     color: #FFFFFF;
     text-decoration: none;
     text-align: center;
+    font-family: system-ui;
 }
 
 .start-learning_btn.css-sghohy-MuiButtonBase-root-MuiButton-root{

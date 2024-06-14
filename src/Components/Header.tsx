@@ -1,7 +1,8 @@
 import React from "react";
 import "./Header.css";
-import javalogo from "../Images/javalogo.jpg";
+import CodeGround from "../Images/CodeGround.png";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 	return (
@@ -9,7 +10,7 @@ export default function Header() {
 			<div className="header-bar">
 				<div className="logo">
 					<a>
-						<img className="header-logo" src={javalogo} alt={"logo"}></img>
+						<img className="header-logo" src={CodeGround} alt={"logo"}></img>
 					</a>
 				</div>
 				<div className="nav-bar">
@@ -30,10 +31,12 @@ export default function Header() {
 							</a>
 						</li>
 						<li className="navbar-list_lastitem">
-							<Button className="start-learning_btn" variant="contained">
-								{" "}
-								Start Learning
-							</Button>
+							<Link to="/codeground">
+								<Button className="start-learning_btn" variant="contained">
+									{" "}
+									Start Learning
+								</Button>
+							</Link>
 						</li>
 					</ul>
 				</div>

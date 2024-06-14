@@ -7,10 +7,11 @@ interface IProblemArea {
 	questionHeader?: string;
 	question?: string;
 	examples?: string;
+	chapter: number;
 }
 
 export default function ProblemArea(props: IProblemArea) {
-	const chapter1Data = chapter1();
+	const chapter1Data = props.chapter == 1 ? chapter1() : chapter2();
 	return (
 		<div className="problem-area-container">
 			<div className="problem-area-header">{chapter1Data.title}</div>
