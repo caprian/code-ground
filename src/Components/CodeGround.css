@@ -1,18 +1,18 @@
 .code-ground_container{
-    background-color: #ffffff;
+    background-color: #1c6481;
 }
 .code-ground {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #ffffff;
+    background-color: #1c6481;
 }
 
 .problem-area {
     flex: 1;
     border-radius: 20px;
     margin: 8px;
-    overflow: auto;
+    overflow-y: auto
 }
 
 .compiler-area {
@@ -24,15 +24,20 @@
 .button-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    right: 0;
 }
 
 .next-btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
     display: flex;
     flex: 1 1;
+    margin-right: 10px;
 }
 
 .prev-btn.css-sghohy-MuiButtonBase-root-MuiButton-root{
     display: flex;
     flex: 1 1;
+    margin-right: 10px;
 }

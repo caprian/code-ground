@@ -1,15 +1,17 @@
 import React from "react";
-import CodeGround from "./CodeGround";
 import "./Dashboard.css";
 import Home from "./Home";
 import Header from "./Header";
+import { CompilerStoreProvider } from "./CompilerStore";
 
 export default function Dashboard() {
 	return (
 		<div>
-			<Header />
-			<Home />
-			<Home />
+			<CompilerStoreProvider>
+				<Header isCodeGroundArea={false} />
+				<Home />
+				<Home />
+			</CompilerStoreProvider>
 		</div>
 	);
 }

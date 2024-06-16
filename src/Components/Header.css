@@ -1,5 +1,5 @@
 .banner-area{
-    height:15vh;
+    height:9vh;
     display: flex;
     width: 100%;
     /* background-color: blueviolet; */
@@ -54,6 +54,9 @@
     text-decoration: none;
     text-align: center;
     font-family: system-ui;
+}
+.start-learning_btn-link{
+    text-decoration: none;
 }
 
 .start-learning_btn.css-sghohy-MuiButtonBase-root-MuiButton-root{

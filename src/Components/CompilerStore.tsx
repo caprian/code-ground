@@ -1,46 +1,70 @@
 import { createStore, StoreApi } from "zustand";
-import { createContext, useContext } from "react";
+import { createContext, useContext, ReactNode } from "react";
+import { executeCode } from "./api";
 
 interface ICompilerStore {
+	chapter: number;
 	code: string;
 	output: string;
 	theme: string;
+	language: string;
+	isLoading: boolean;
+	openSignInDialog: boolean;
+	openSignUpDialog: boolean;
+	userLogged: boolean;
+	editorRef: React.RefObject<any>;
+	setEditorRef: (editorRef: React.MutableRefObject<null>) => void;
+	setUserLogged: (userLogged: boolean) => void;
+	setChapter: (chapter: number) => void;
 	setCode: (code: string) => void;
 	setOutput: (output: string) => void;
 	setTheme: (theme: string) => void;
-	runCode: () => Promise<void>;
+	setLanguage: (language: string) => void;
+	setIsLoading: (isLoading: boolean) => void;
+	SetOpenSignInDialog: (openSignInDialog: boolean) => void;
+	SetOpenSignUpDialog: (openSignUpDialog: boolean) => void;
+	runCode: () => void;
 }
 
-const compilerStore = createStore<ICompilerStore>((set, get) => ({
-	code: "// some comment",
-	output: "",
+const useCompilerStore = createStore<ICompilerStore>((set, get) => ({
+	chapter: 1,
+	code: "",
+	output: "You must run your code first",
 	theme: "vs-dark",
+	language: "java",
+	isLoading: false,
+	openSignInDialog: false,
+	openSignUpDialog: false,
+	userLogged: false,
+	editorRef: { current: null },
+	setEditorRef: (editorRef: React.RefObject<any>) => set({ editorRef }),
+	setUserLogged: (userLogged: boolean) => set({ userLogged }),
+	setChapter: (chapter) => set({ chapter }),
 	setCode: (code) => set({ code }),
 	setOutput: (output) => set({ output }),
 	setTheme: (theme) => set({ theme }),
-	runCode: async () => {
-		const { code } = get();
-		const language_id = 62; // Language ID for Java in Judge0
+	setLanguage: (language) => set({ language }),
+	setIsLoading: (isLoading) => set({ isLoading }),
+	SetOpenSignInDialog: (openSignInDialog) => set({ openSignInDialog }),
+	SetOpenSignUpDialog: (openSignUpDialog) => set({ openSignUpDialog }),
+	runCode: () => {
+		const { code, language, setOutput, setIsLoading } = get();
+		if (!code) return;
+		setIsLoading(true);
 
-		const response = await fetch(
-			"https://api.judge0.com/submissions?base64_encoded=false&wait=true",
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					source_code: code,
-					language_id: language_id,
-				}),
-			}
-		);
-
-		const resultData = await response.json();
-
-		set({
-			output: resultData.stdout || resultData.stderr || "Error executing code",
-		});
+		executeCode(language, code)
+			.then((response) => {
+				const { run: result } = response;
+				const resultData = result;
+				setOutput(resultData.output);
+			})
+			.catch((error) => {
+				console.error("Error executing code", error);
+				setOutput("Error executing code");
+			})
+			.finally(() => {
+				setIsLoading(false);
+			});
 	},
 }));
 
@@ -48,13 +72,21 @@ const CompilerStoreContext = createContext<StoreApi<ICompilerStore> | null>(
 	null
 );
 
-export const useCompilerStore = () => useContext(CompilerStoreContext);
+export const useCompilerStoreContext = () => {
+	const context = useContext(CompilerStoreContext);
+	if (!context) {
+		throw new Error(
+			"useCompilerStoreContext must be used within a CompilerStoreProvider"
+		);
+	}
+	return context;
+};
 
-export const CompilerStoreProvider: React.FC<{ children: React.ReactNode }> = ({
+export const CompilerStoreProvider: React.FC<{ children: ReactNode }> = ({
 	children,
 }) => {
 	return (
-		<CompilerStoreContext.Provider value={compilerStore}>
+		<CompilerStoreContext.Provider value={useCompilerStore}>
 			{children}
 		</CompilerStoreContext.Provider>
 	);

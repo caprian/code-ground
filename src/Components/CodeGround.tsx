@@ -1,22 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import ProblemArea from "./ProblemArea";
 import CompilerArea from "./CompilerArea";
 import "./CodeGround.css";
-import { CompilerStoreProvider, useCompilerStore } from "./CompilerStore";
+import {
+	CompilerStoreProvider,
+	useCompilerStoreContext,
+} from "./CompilerStore";
 import { Button } from "@mui/material";
+import { chapters } from "./chapters";
+import { useStore } from "zustand";
+import RunButton from "./RunButton";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 
 export default function CodeGround() {
-	const [chapter, setChapter] = useState<number>(1);
+	//const [chapter, setChapter] = useState<number>(1);
+	const store = useCompilerStoreContext();
+	const setChapter = store.getState().setChapter;
+	const chapter = useStore(store, (state) => state.chapter);
+	const editorRef = useStore(store, (state) => state.editorRef);
+
+	const chaptersLength = Object.keys(chapters).length;
 	const handleNextButtonClick = () => {
-		if (chapter >= 1 && chapter != 2) {
-			setChapter(chapter + 1);
-		}
+		setChapter(chapter + 1);
 	};
 
 	const handlePrevButtonClick = () => {
-		if (chapter > 1) {
-			setChapter(chapter - 1);
-		}
+		setChapter(chapter - 1);
 	};
 	return (
 		<div className="code-ground_container">
@@ -34,14 +44,16 @@ export default function CodeGround() {
 				<Button
 					onClick={handlePrevButtonClick}
 					variant="contained"
+					disabled={chapter === 1}
 					className="prev-btn">
-					Prev Chapter
+					<NavigateBeforeIcon />
 				</Button>
 				<Button
 					onClick={handleNextButtonClick}
 					variant="contained"
+					disabled={chapter === chaptersLength}
 					className="next-btn">
-					Next Chapter
+					<NavigateNextIcon />
 				</Button>
 			</div>
 		</div>

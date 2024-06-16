@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ProblemArea.css";
-import { chapter1, chapter2 } from "./chapters";
+import { getChapters } from "./chapters";
 
 interface IProblemArea {
 	questionNo?: number;
@@ -11,19 +11,25 @@ interface IProblemArea {
 }
 
 export default function ProblemArea(props: IProblemArea) {
-	const chapter1Data = props.chapter == 1 ? chapter1() : chapter2();
+	const chapterData = getChapters(props.chapter);
 	return (
 		<div className="problem-area-container">
-			<div className="problem-area-header">{chapter1Data.title}</div>
+			<div className="problem-area-header">{chapterData.title}</div>
 			<div className="problem-area-example">
-				<p>{chapter1Data.description}</p>
+				<p>{chapterData.description}</p>
 				<p className="problem-area-example">
-					<p>{chapter1Data.exercise.title}</p>
-					<p>{chapter1Data.exercise.description}</p>
-					<p>{chapter1Data.exercise.code.initial}</p>
-					<p>{chapter1Data.exercise.code.solution}</p>
-					<p>{chapter1Data.exercise.instructions}</p>
-					<p>{chapter1Data.exercise.hints}</p>
+					<p>{chapterData.exercise.title}</p>
+					<p>{chapterData.exercise.description}</p>
+					<pre>
+						<code className="code-block">
+							{chapterData.exercise.code.initial}
+						</code>
+						<code className="code-block">
+							{chapterData.exercise.code.solution}
+						</code>
+					</pre>
+					<p>{chapterData.exercise.instructions}</p>
+					<p>{chapterData.exercise.hints}</p>
 				</p>
 			</div>
 		</div>

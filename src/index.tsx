@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Dashboard from "./Components/Dashboard";
 import HomePage from "./Pages/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CodeGround from "./Components/CodeGround";
+import CodeGroundPage from "./Pages/CodeGroundPage";
 
 const router = createBrowserRouter([
 	{
@@ -16,7 +14,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/codeground",
-		element: <CodeGround />,
+		element: <CodeGroundPage />,
 	},
 ]);
 
