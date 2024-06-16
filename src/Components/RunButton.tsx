@@ -29,6 +29,7 @@ export default function RunButton(props: IRunButton) {
 				title="Run"
 				className={buttonClass}
 				onClick={onRunClick}
+				disabled={isLoading}
 				variant="contained">
 				{isLoading ? (
 					<CircularProgress style={{ color: "white" }} size={24} />
