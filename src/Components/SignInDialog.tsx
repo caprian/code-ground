@@ -84,6 +84,7 @@ export default function SignInDialog() {
 							Log in to your account
 						</DialogTitle>
 					</div>
+					{message && <p>{message}</p>}
 					<div className="signin-form_container">
 						{/* <label className="signin-label" htmlFor="email">
 							Email
@@ -152,7 +153,6 @@ export default function SignInDialog() {
 							Remember Me!
 						</label>
 					</div> */}
-					{message && <p>{message}</p>}
 					<Button
 						type="submit"
 						variant="contained"

@@ -40,7 +40,7 @@
 .signin-form_container{
     display: flex;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .signin-label.css-9npbnl-MuiFormLabel-root-MuiInputLabel-root{

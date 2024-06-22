@@ -3,10 +3,17 @@ import axios from "axios";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import { useCompilerStoreContext } from "./CompilerStore";
-import { Button } from "@mui/material";
+import {
+	Button,
+	IconButton,
+	InputAdornment,
+	InputLabel,
+	TextField,
+} from "@mui/material";
 import { useStore } from "zustand";
 import CloseIcon from "@mui/icons-material/Close";
 import "./SignUpDialog.css";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export default function SignUpDialog() {
 	const store = useCompilerStoreContext();
@@ -18,6 +25,7 @@ export default function SignUpDialog() {
 	const [password, setPassword] = useState("");
 	const [rePassword, setRePassword] = useState("");
 	const [message, setMessage] = useState("");
+	const [showPassword, setShowPassword] = useState(false);
 
 	const handleClose = () => {
 		SetOpenSignUpDialog(false);
@@ -51,6 +59,13 @@ export default function SignUpDialog() {
 			});
 	};
 
+	const handleClickShowPassword = () => setShowPassword((show) => !show);
+	const handleMouseDownPassword = (
+		event: React.MouseEvent<HTMLButtonElement>
+	) => {
+		event.preventDefault();
+	};
+
 	return (
 		<div className="signup-dialog_container">
 			<Dialog
@@ -68,10 +83,15 @@ export default function SignUpDialog() {
 					</div>
 
 					<div className="signup-form_container">
-						<label className="signup-label" htmlFor="email">
+						{/* <label className="signup-label" htmlFor="email">
 							Email
-						</label>
-						<input
+						</label> */}
+
+						<InputLabel className="signup-label" htmlFor="email">
+							{" "}
+							Email
+						</InputLabel>
+						{/* <input
 							className="signup-input"
 							type="email"
 							name="email"
@@ -79,23 +99,90 @@ export default function SignUpDialog() {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							required
-						/>
-						<label className="signup-label">Password</label>
-						<input
+						/> */}
+						<div className="signup-input_container" style={{ width: "100%" }}>
+							<TextField
+								className="signup-input_email"
+								type="email"
+								name="email"
+								id="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								required
+							/>
+						</div>
+						{/* <label className="signup-label">Password</label> */}
+						<InputLabel className="signup-label" htmlFor="email">
+							{" "}
+							Password
+						</InputLabel>
+						<div className="signup-input_container" style={{ width: "100%" }}>
+							<TextField
+								className="signup-input_pword"
+								type={"password"}
+								name="password"
+								id="password"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+								required
+								// InputProps={{
+								// 	endAdornment: (
+								// 		<InputAdornment position="end">
+								// 			<IconButton
+								// 				aria-label="toggle password visibility"
+								// 				onClick={handleClickShowPassword}
+								// 				onMouseDown={handleMouseDownPassword}
+								// 				edge="end">
+								// 				{showPassword ? <VisibilityOff /> : <Visibility />}
+								// 			</IconButton>
+								// 		</InputAdornment>
+								// 	),
+								// }}
+							/>
+						</div>
+						{/* <input
 							className="signup-input"
 							type="password"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							required
-						/>
-						<label className="signup-label">Re-Enter Password</label>
-						<input
+						/> */}
+						{/* <label className="signup-label">Re-Enter Password</label> */}
+						<InputLabel className="signup-label" htmlFor="email">
+							{" "}
+							Re-Enter Password
+						</InputLabel>
+						{/* <input
 							className="signup-input"
 							type="password"
 							value={rePassword}
 							onChange={(e) => setRePassword(e.target.value)}
 							required
-						/>
+						/> */}
+						<div className="signup-input_container" style={{ width: "100%" }}>
+							<TextField
+								className="signup-input_repword"
+								type={showPassword ? "text" : "password"}
+								name="repassword"
+								id="repassword"
+								value={rePassword}
+								onChange={(e) => setRePassword(e.target.value)}
+								required
+								InputProps={{
+									endAdornment: (
+										<InputAdornment position="end">
+											<IconButton
+												aria-label="toggle password visibility"
+												onClick={handleClickShowPassword}
+												onMouseDown={handleMouseDownPassword}
+												edge="end">
+												{showPassword ? <VisibilityOff /> : <Visibility />}
+											</IconButton>
+										</InputAdornment>
+									),
+								}}
+							/>
+						</div>
 					</div>
 					<div className="dialog-checkbox_container">
 						<input

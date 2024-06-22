@@ -1,17 +1,16 @@
 import React from "react";
-import "./Header.css";
-import CodeGround from "../Images/CodeGround.png";
-import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
 import { useCompilerStoreContext } from "./CompilerStore";
 import { useStore } from "zustand";
+import { Link } from "react-router-dom";
+import CodeGround from "../Images/CodeGround.png";
+import { Button } from "@mui/material";
 
-interface IHeaderProps {
+interface ICodeGroundHeaderProps {
 	isCodeGroundArea?: boolean;
 	headerCssClassName?: string;
 }
 
-export default function Header(props: IHeaderProps) {
+export default function CodeGroundHeader(props: ICodeGroundHeaderProps) {
 	const store = useCompilerStoreContext();
 	const SetOpenSignInDialog = store.getState().SetOpenSignInDialog;
 	const SetOpenSignUpDialog = store.getState().SetOpenSignUpDialog;
@@ -40,7 +39,7 @@ export default function Header(props: IHeaderProps) {
 				<div className="nav-bar">
 					<ul className="navbar-list">
 						{/* {!props.isCodeGroundArea && !userLogged && ( */}
-						{!props.isCodeGroundArea && !userLogged && (
+						{!userLogged && (
 							<li className="navbar-list_items">
 								<Button
 									style={{ color: "white" }}
@@ -51,7 +50,7 @@ export default function Header(props: IHeaderProps) {
 							</li>
 						)}
 						{/* {!props.isCodeGroundArea && !userLogged && ( */}
-						{!props.isCodeGroundArea && !userLogged && (
+						{!userLogged && (
 							<li className="navbar-list_items">
 								<Button
 									style={{ color: "white" }}
@@ -63,7 +62,7 @@ export default function Header(props: IHeaderProps) {
 						)}
 
 						{/* {!props.isCodeGroundArea && userLogged && ( */}
-						{!props.isCodeGroundArea && userLogged && (
+						{userLogged && (
 							<li className="navbar-list_items">
 								<Button
 									style={{ color: "white" }}
@@ -73,33 +72,11 @@ export default function Header(props: IHeaderProps) {
 								</Button>
 							</li>
 						)}
-						{!props.isCodeGroundArea && (
-							<li className="navbar-list_items">
-								<Button style={{ color: "white" }} variant="text">
-									About
-								</Button>
-							</li>
-						)}
-						{!props.isCodeGroundArea && (
-							<li className="navbar-list_lastitem">
-								<Link className="start-learning_btn-link" to="/codeground">
-									<Button className="start-learning_btn" variant="contained">
-										{" "}
-										Start Learning
-									</Button>
-								</Link>
-							</li>
-						)}
-						{props.isCodeGroundArea && !userLogged && (
-							<li className="navbar-list_items">
-								<Button
-									style={{ color: "white" }}
-									variant="text"
-									onClick={onSignInButtonClick}>
-									Log In
-								</Button>
-							</li>
-						)}
+						<li className="navbar-list_lastitem">
+							<Button style={{ color: "white" }} variant="text">
+								About
+							</Button>
+						</li>
 					</ul>
 				</div>
 			</div>

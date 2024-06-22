@@ -2,12 +2,16 @@ import React from "react";
 import CodeGround from "../Components/CodeGround";
 import Header from "../Components/Header";
 import { CompilerStoreProvider } from "../Components/CompilerStore";
+import CodeGroundHeader from "../Components/CodeGroundHeader";
 
 export default function HomePage() {
 	return (
 		<div>
 			<CompilerStoreProvider>
-				<Header isCodeGroundArea={true} />
+				<CodeGroundHeader
+					headerCssClassName="codeground-header"
+					isCodeGroundArea={true}
+				/>
 				<CodeGround />
 			</CompilerStoreProvider>
 		</div>

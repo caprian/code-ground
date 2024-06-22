@@ -12,6 +12,8 @@ import { useStore } from "zustand";
 import RunButton from "./RunButton";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+import SignInDialog from "./SignInDialog";
+import SignUpDialog from "./SignUpDialog";
 
 export default function CodeGround() {
 	//const [chapter, setChapter] = useState<number>(1);
@@ -19,6 +21,8 @@ export default function CodeGround() {
 	const setChapter = store.getState().setChapter;
 	const chapter = useStore(store, (state) => state.chapter);
 	const editorRef = useStore(store, (state) => state.editorRef);
+	const openSignInDialog = useStore(store, (state) => state.openSignInDialog);
+	const openSignUpDialog = useStore(store, (state) => state.openSignUpDialog);
 
 	const chaptersLength = Object.keys(chapters).length;
 	const handleNextButtonClick = () => {
@@ -56,6 +60,8 @@ export default function CodeGround() {
 					<NavigateNextIcon />
 				</Button>
 			</div>
+			{openSignInDialog && <SignInDialog />}
+			{openSignUpDialog && <SignUpDialog />}
 		</div>
 	);
 }
