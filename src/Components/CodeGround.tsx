@@ -46,6 +46,7 @@ export default function CodeGround() {
 			</div>
 			<div className="button-container">
 				<Button
+					title="Previous"
 					onClick={handlePrevButtonClick}
 					variant="contained"
 					disabled={chapter === 1}
@@ -53,6 +54,7 @@ export default function CodeGround() {
 					<NavigateBeforeIcon />
 				</Button>
 				<Button
+					title="Next"
 					onClick={handleNextButtonClick}
 					variant="contained"
 					disabled={chapter === chaptersLength}
