@@ -1,27 +1,28 @@
 import axios from "axios";
-import { LANGUAGE_VERSIONS } from "./Constants";
-
 
 const API = axios.create({
-  baseURL: "https://emkc.org/api/v2/piston",
+  baseURL: "http://localhost:8080/compile",
 });
 
-const CHAPTERSAPI =axios.create({
-    baseURL: "./chapters.json"
+const CHAPTERSAPI = axios.create({
+  baseURL: "./chapters.json"
 });
 
 export const getChapters = async () => {
-    const response = await CHAPTERSAPI.get('/');
-    return response.data;
-  };
-
-export const executeCode = async (language: any, sourceCode: any) => {
-  const response = await API.post("/execute", {
-    language: language,
-    version: LANGUAGE_VERSIONS[language],
-    files: [{
-      content: sourceCode
-    }],
-  });
+  const response = await CHAPTERSAPI.get('/');
   return response.data;
+};
+
+export const executeCode = async (language:any, sourceCode:any) => {
+  if (language !== 'java') {
+    throw new Error("Only Java language is supported for local execution");
+  }
+
+  const response = await API.post('/java', sourceCode, {
+    headers: {
+      'Content-Type': 'text/plain',
+    },
+  });
+
+  return response.data; // Return the plain string output directly
 };

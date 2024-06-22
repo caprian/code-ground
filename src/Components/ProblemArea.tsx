@@ -16,10 +16,10 @@ export default function ProblemArea(props: IProblemArea) {
 		<div className="problem-area-container">
 			<div className="problem-area-header">{chapterData.title}</div>
 			<div className="problem-area-example">
-				<p>{chapterData.description}</p>
-				<p className="problem-area-example">
-					<p>{chapterData.exercise.title}</p>
-					<p>{chapterData.exercise.description}</p>
+				<div>{chapterData.description}</div>
+				<div className="problem-area-example">
+					<div>{chapterData.exercise.title}</div>
+					<div>{chapterData.exercise.description}</div>
 					<pre>
 						<code className="code-block">
 							{chapterData.exercise.code.initial}
@@ -28,9 +28,9 @@ export default function ProblemArea(props: IProblemArea) {
 							{chapterData.exercise.code.solution}
 						</code>
 					</pre>
-					<p>{chapterData.exercise.instructions}</p>
-					<p>{chapterData.exercise.hints}</p>
-				</p>
+					<div>{chapterData.exercise.instructions}</div>
+					<div>{chapterData.exercise.hints}</div>
+				</div>
 			</div>
 		</div>
 	);

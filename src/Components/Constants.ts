@@ -62,7 +62,7 @@ export const CODE_SNIPPETS: Record<string, string> = {
   export const JAVA_CODE_SNIPPETS: Record<string, Record<number, string>> = {
     java: {
       1: `
-        public class BankAccount {
+        public class CodeGround {
           public static void main(String[] args) {
             // Code for Chapter 1 Exercise
             // Write your code here
@@ -70,10 +70,10 @@ export const CODE_SNIPPETS: Record<string, string> = {
         }
       `,
       2: `
-        public class BankAccount {
+        public class CodeGround {
           private int balance = _____;
   
-          public BankAccount() {
+          public CodeGround() {
             // Constructor
           }
   
@@ -87,18 +87,18 @@ export const CODE_SNIPPETS: Record<string, string> = {
   
           public static void main(String[] args) {
             // Code for Chapter 2 Exercise
-            // Create an instance of BankAccount and perform operations
-            BankAccount account = new BankAccount();
+            // Create an instance of CodeGround and perform operations
+            CodeGround account = new CodeGround();
             // Example: account.setBalance(100);
             System.out.println("Balance: " + account.getBalance());
           }
         }
       `,
       3: `
-        public class BankAccount {
+        public class CodeGround {
           private int balance = 0;
   
-          public BankAccount() {
+          public CodeGround() {
             // Constructor
           }
   
@@ -116,18 +116,18 @@ export const CODE_SNIPPETS: Record<string, string> = {
   
           public static void main(String[] args) {
             // Code for Chapter 3 Exercise
-            // Create an instance of BankAccount and perform deposit and withdrawal
-            BankAccount account = new BankAccount();
+            // Create an instance of CodeGround and perform deposit and withdrawal
+            CodeGround account = new CodeGround();
             // Example: account.deposit(100);
             System.out.println("Balance after operations: " + account.getBalance());
           }
         }
       `,
       4: `
-        public class BankAccount {
+        public class CodeGround {
           private int balance;
   
-          public BankAccount(int initialBalance) {
+          public CodeGround(int initialBalance) {
             balance = initialBalance;
           }
   
@@ -137,17 +137,17 @@ export const CODE_SNIPPETS: Record<string, string> = {
   
           public static void main(String[] args) {
             // Code for Chapter 4 Exercise
-            // Create an instance of BankAccount with initial balance and perform operations
-            BankAccount account = new BankAccount(_____); // Replace _____ with initial balance
+            // Create an instance of CodeGround with initial balance and perform operations
+            CodeGround account = new CodeGround(_____); // Replace _____ with initial balance
             System.out.println("Initial balance: " + account.getBalance());
           }
         }
       `,
       5: `
-        public class BankAccount {
+        public class CodeGround {
           private int balance;
   
-          public BankAccount(int initialBalance) {
+          public CodeGround(int initialBalance) {
             balance = initialBalance;
           }
   
@@ -161,18 +161,18 @@ export const CODE_SNIPPETS: Record<string, string> = {
   
           public static void main(String[] args) {
             // Code for Chapter 5 Exercise
-            // Create an instance of BankAccount and perform operations with setBalance
-            BankAccount account = new BankAccount(_____); // Replace _____ with initial balance
+            // Create an instance of CodeGround and perform operations with setBalance
+            CodeGround account = new CodeGround(_____); // Replace _____ with initial balance
             // Example: account.setBalance(300);
             System.out.println("Updated balance: " + account.getBalance());
           }
         }
       `,
       6: `
-        public class BankAccount {
+        public class CodeGround {
           private int balance;
   
-          public BankAccount(int initialBalance) {
+          public CodeGround(int initialBalance) {
             balance = initialBalance;
           }
   
@@ -186,22 +186,22 @@ export const CODE_SNIPPETS: Record<string, string> = {
   
           @Override
           public String toString() {
-            return "BankAccount balance: " + balance;
+            return "CodeGround balance: " + balance;
           }
   
           public static void main(String[] args) {
             // Code for Chapter 6 Exercise
-            // Create an instance of BankAccount and print its state
-            BankAccount account = new BankAccount(_____); // Replace _____ with initial balance
+            // Create an instance of CodeGround and print its state
+            CodeGround account = new CodeGround(_____); // Replace _____ with initial balance
             System.out.println(account);
           }
         }
       `,
       7: `
-        public class BankAccount {
+        public class CodeGround {
           private int balance;
   
-          public BankAccount(int initialBalance) {
+          public CodeGround(int initialBalance) {
             balance = initialBalance;
           }
   
@@ -223,19 +223,19 @@ export const CODE_SNIPPETS: Record<string, string> = {
   
           @Override
           public String toString() {
-            return "BankAccount balance: " + balance;
+            return "CodeGround balance: " + balance;
           }
   
           public static void main(String[] args) {
-            // Code for Chapter 7 Exercise (BankAccount)
-            // Create an instance of BankAccount and perform deposit, withdrawal, and print state
-            BankAccount account = new BankAccount(_____); // Replace _____ with initial balance
+            // Code for Chapter 7 Exercise (CodeGround)
+            // Create an instance of CodeGround and perform deposit, withdrawal, and print state
+            CodeGround account = new CodeGround(_____); // Replace _____ with initial balance
             // Example: account.deposit(200);
             System.out.println(account);
           }
         }
   
-        public class SavingsAccount extends BankAccount {
+        public class SavingsAccount extends CodeGround {
           private double interestRate;
   
           public SavingsAccount(int initialBalance, double interestRate) {
@@ -264,7 +264,7 @@ export const CODE_SNIPPETS: Record<string, string> = {
         }
       `,
       8: `
-        public class ArrayExample {
+        public class CodeGround {
           public static void main(String[] args) {
             int[] numbers = { 1, 2, 3, 4, 5 };
             int sum = 0;
@@ -278,7 +278,7 @@ export const CODE_SNIPPETS: Record<string, string> = {
         }
       `,
       9: `
-        public class Palindrome {
+        public class CodeGround {
           public static void main(String[] args) {
             String str = "______"; // Replace ______ with a string to check palindrome
             boolean isPalindrome = true;
@@ -299,7 +299,7 @@ export const CODE_SNIPPETS: Record<string, string> = {
         }
       `,
       10: `
-        public class PrimeNumber {
+        public class CodeGround {
           public static void main(String[] args) {
             int num = _____; // Replace _____ with a number to check if it's prime
             boolean isPrime = true;
@@ -325,6 +325,7 @@ export const CODE_SNIPPETS: Record<string, string> = {
       `,
     },
   };
+  
   
   
   

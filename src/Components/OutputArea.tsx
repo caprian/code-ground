@@ -19,7 +19,7 @@ export default function OutputArea() {
 				size="medium"
 				label="Output"
 				variant="filled"
-				defaultValue="You must run your code first"
+				//defaultValue="You must run your code first"
 				value={output}
 				disabled={true}
 				fullWidth={true}

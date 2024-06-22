@@ -9,7 +9,7 @@ export const chapters = {
 				"To start creating our Java application, let's create a base class called BankAccount.",
 			code: {
 				initial: "package default;\n\n",
-				solution: "package default;\n\npublic class BankAccount {\n\n}",
+				solution: "package default;\n\npublic class CodeGround {\n\n}",
 			},
 			instructions: [
 				"Make it so our class uses the default package.",
@@ -29,7 +29,7 @@ export const chapters = {
 			title: "Declare a balance variable",
 			description: "Our BankAccount class needs to store the account balance.",
 			code: {
-				initial: "package default;\n\npublic class BankAccount {\n\n",
+				initial: "package default;\n\npublic class CodeGround {\n\n",
 				solution:
 					"package default;\n\npublic class BankAccount {\n  int balance = 0;\n}",
 			},

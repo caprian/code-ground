@@ -10,7 +10,6 @@ export default function Dashboard() {
 			<CompilerStoreProvider>
 				<Header isCodeGroundArea={false} />
 				<Home />
-				<Home />
 			</CompilerStoreProvider>
 		</div>
 	);

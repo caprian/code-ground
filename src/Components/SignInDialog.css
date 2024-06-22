@@ -23,7 +23,7 @@
     -ms-flex-pack: center;
     justify-content: center;
     color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 24px;
+    padding-top: 50px;
     position: relative;
     font-weight: 600;
 }
@@ -31,9 +31,10 @@
 .signin-close_btn.css-i4bv87-MuiSvgIcon-root{
     position: absolute;
     right: 0;
-    font-size: 30px;
+    font-size: 24px;
     padding: 15px;
     cursor: pointer;
+    opacity: 0.7;
 }
 
 .signin-form_container{
@@ -42,16 +43,20 @@
     flex-direction: column
 }
 
-.signin-label{
+.signin-label.css-9npbnl-MuiFormLabel-root-MuiInputLabel-root{
     font-family: 'Gilroy-Bold';
-    font-size: 20px;
+    font-size: 16px;
     line-height: 23px;
     color: rgba(0, 0, 0, 0.7);
     display: inline-block;
     margin-bottom: .5rem;
-    font-weight: 600;
     align-self: flex-start;
     margin-top: .5rem;
+    font-weight: 600;
+}
+
+.signin-input_email .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    height: -webkit-fill-available
 }
 
 .signin-input{
@@ -67,6 +72,37 @@
     align-self: flex-start;
     width: 100%;
     height: 30px;
+}
+
+.signin-input_email .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+    border-radius: 4px;
+    background: transparent;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: .25rem;
+    align-self: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.signin-input_container .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 100%;
+    height: 36px;
+}
+
+.signin-input_pword .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+    border-radius: 4px;
+    background: transparent;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: .25rem;
+    align-self: flex-start;
+    width: 100%;
+    height: 100%;
 }
 .dialog-checkbox_container{
     display: flex;
@@ -88,7 +124,9 @@
 }
 .signin-dialog .css-1t1j96h-MuiPaper-root-MuiDialog-paper{
     align-items: center;
-    width: 40%;
+    width: 25%;
+    min-width: 400px;
+    border-radius: 16px;
 }
 
 .signin-confirm_btn.css-sghohy-MuiButtonBase-root-MuiButton-root{

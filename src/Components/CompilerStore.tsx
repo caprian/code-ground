@@ -49,20 +49,25 @@ const useCompilerStore = createStore<ICompilerStore>((set, get) => ({
 	SetOpenSignUpDialog: (openSignUpDialog) => set({ openSignUpDialog }),
 	runCode: () => {
 		const { code, language, setOutput, setIsLoading } = get();
+
+		// Ensure there's code to execute
 		if (!code) return;
+
+		// Set loading state to true
 		setIsLoading(true);
 
+		// Call executeCode function (assuming it's imported correctly)
 		executeCode(language, code)
-			.then((response) => {
-				const { run: result } = response;
-				const resultData = result;
-				setOutput(resultData.output);
+			.then((output) => {
+				// Set output to the response
+				setOutput(output);
 			})
 			.catch((error) => {
-				console.error("Error executing code", error);
-				setOutput("Error executing code");
+				console.error("Error executing codeee", error);
+				setOutput("Error executing codeeee");
 			})
 			.finally(() => {
+				// Reset loading state
 				setIsLoading(false);
 			});
 	},

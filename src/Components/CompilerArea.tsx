@@ -46,7 +46,7 @@ export default function CompilerArea() {
 		editorRef.current = editor;
 		editor.focus();
 		setEditorRef(editor);
-		console.log(editor);
+		//console.log(editor);
 	};
 	useEffect(() => {
 		setEditorRef(editorRef);
@@ -67,15 +67,18 @@ export default function CompilerArea() {
 				{/* <div className="btn-run">
 					<RunButton className="run-btn" name="Run" editorRef={editorRef} />
 				</div> */}
-				<FormLabel style={{ color: "white" }} component="legend">
+				<FormLabel
+					id="editorform-label"
+					style={{ color: "white" }}
+					component="legend">
 					Main.java
 				</FormLabel>
 				<Editor
 					language={language}
 					theme={theme}
 					height="40vh"
-					defaultValue={javaCode}
-					value={value}
+					//defaultValue={javaCode}
+					value={javaCode}
 					onChange={handleEditorChange}
 					onMount={handleEditorMount}
 				/>

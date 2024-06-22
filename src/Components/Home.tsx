@@ -13,7 +13,13 @@ export default function Home() {
 	return (
 		<section className="home-contents">
 			<div className="home-container">
-				<div className="featured-courses">Featured Java Course</div>
+				<div className="featured-courses">
+					<strong>
+						<span className="home-container_promo">
+							Start Learing Java the CodeGround way...
+						</span>
+					</strong>
+				</div>
 				{openSignInDialog && <SignInDialog />}
 				{openSignUpDialog && <SignUpDialog />}
 			</div>
