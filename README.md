@@ -1,4 +1,4 @@
-# Codeground Frontend
+# Codeground
 
 Codeground is an interactive platform that teaches you Java from scratch. Read lessons and practice coding simultaneously in our built-in compiler. Codeground offers a unique, interactive learning experience, allowing users to read lessons and practice coding simultaneously with a built-in code editor. While our current curriculum focuses on Java fundamentals and advanced topics, there is high demand for additional content on related technologies and frameworks. Join Codeground today and master Java with engaging lessons, practical exercises, and instant feedback!
 
